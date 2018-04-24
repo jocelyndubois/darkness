@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pnj</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pnj.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ pnj.name }}</td>
+            </tr>
+            <tr>
+                <th>Alias</th>
+                <td>{{ pnj.alias }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ pnj.description }}</td>
+            </tr>
+            <tr>
+                <th>Job</th>
+                <td>{{ pnj.job }}</td>
+            </tr>
+            <tr>
+                <th>Rumor</th>
+                <td>{{ pnj.rumor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pnj_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('pnj_edit', { 'id': pnj.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pnjs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Alias</th>
+                <th>Description</th>
+                <th>Job</th>
+                <th>Rumor</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pnj in pnjs %}
+            <tr>
+                <td><a href="{{ path('pnj_show', { 'id': pnj.id }) }}">{{ pnj.id }}</a></td>
+                <td>{{ pnj.name }}</td>
+                <td>{{ pnj.alias }}</td>
+                <td>{{ pnj.description }}</td>
+                <td>{{ pnj.job }}</td>
+                <td>{{ pnj.rumor }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('pnj_show', { 'id': pnj.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('pnj_edit', { 'id': pnj.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pnj_new') }}">Create a new pnj</a>
+        </li>
+    </ul>
+{% endblock %}

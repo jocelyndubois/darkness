@@ -1,0 +1,21 @@
+tenebres_place:
+    resource: "@TenebresBundle/Controller/PlaceController.php"
+    type:     annotation
+
+tenebres_pnj:
+    resource: "@TenebresBundle/Controller/PnjController.php"
+    type:     annotation
+
+tenebres_district:
+    resource: "@TenebresBundle/Controller/DistrictController.php"
+    type:     annotation
+
+tenebres_category:
+    resource: "@TenebresBundle/Controller/CategoryController.php"
+    type:     annotation
+
+tenebres:
+    resource: "@TenebresBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
